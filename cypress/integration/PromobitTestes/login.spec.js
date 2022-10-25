@@ -9,7 +9,7 @@ beforeEach(() => {
    describe('testesLogin', () => {
     it('loginValido', () => {
        cy.xpath("//button[.='Entre ou Cadastre-se']").click()
-       cy.contains('Faça o Login').click()
+       cy.xpath("//nav/button[.='Entrar']").click()
        cy.get('#E-mail').type('wendell.amaral@promobit.com.br')
        cy.get('#Senha').type('Promobit@1')
        cy.xpath("//button[@type='submit']").click()
@@ -18,7 +18,7 @@ beforeEach(() => {
      })
      it('loginInvalido', () => {
         cy.xpath("//button[.='Entre ou Cadastre-se']").click()
-        cy.contains('Faça o Login').click()
+        cy.xpath("//nav/button[.='Entrar']").click()
         cy.get('#E-mail').type('wendelll.amaral@promobit.com.br')
         cy.get('#Senha').type('Promobit@1')
         cy.xpath("//button[@type='submit']").click()
@@ -28,12 +28,12 @@ beforeEach(() => {
       })
       it('senhaInvalida', () => {
         cy.xpath("//button[.='Entre ou Cadastre-se']").click()
-        cy.contains('Faça o Login').click()
+        cy.xpath("//nav/button[.='Entrar']").click()
         cy.get('#E-mail').type('wendell.amaral@promobit.com.br')
         cy.get('#Senha').type('Promobit@1')
         cy.xpath("//button[@type='submit']").click()
         cy.xpath("//div[.='Senha ou e-mail inválido']")
-        .should('contain','Senha ou e-mail inválido')
+        //.should('contain','Senha ou e-mail inválido')
  
       })
       
