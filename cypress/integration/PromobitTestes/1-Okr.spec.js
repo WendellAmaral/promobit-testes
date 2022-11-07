@@ -9,11 +9,12 @@ beforeEach(() => {
    describe('okr', () => {
     
      it('IrALoja', () => {
-      cy.get('[style="min-width: calc(25% - 12px); max-width: calc(25% - 12px); transform: translate3d(0px, 0px, 0px);"] > .e19tro4z0 > .css-1t8t9xr > .css-kloepi > .css-w26eb').click()
-      cy.contains('Ir à loja').should('be.visible').invoke('removeAttr', 'target').click({force: true})
-      cy.url().should('include', 'https://www.promobit.com.br/Redirect/to/')
-    })
+      cy.xpath("/html/body/div/div[2]/div/div/div/div/div[2]/div/div/div/div[1]/div/a/div[1]/div[1]/img").click()
+      cy.contains('Ir à loja').invoke('removeAttr', 'target').click({force: true})
+    
+       cy.url().should('include', 'https://www.promobit.com.br/Redirect/to/')
 
+    })
 })
 
                  //Adiversidades Encontradas//
